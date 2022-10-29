@@ -1,0 +1,25 @@
+{
+  "name": "asay-datatable",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asayhome/asay-datatable.git"
+  },
+  "keywords": [
+    "datatable"
+  ],
+  "author": "Abdelrahman Saeed Elhassan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asayhome/asay-datatable/issues"
+  },
+  "homepage": "https://github.com/asayhome/asay-datatable#readme",
+  "dependencies": {
+    "qs": "^6.11.0"
+  }
+}
