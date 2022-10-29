@@ -81,7 +81,7 @@ export default {
       while (totalPages > 0) {
         array.push(ctr);
         ctr++;
-        totalPages -= this.startWith + this.paginate;
+        totalPages -= this.paginate;
       }
       return array;
     },
