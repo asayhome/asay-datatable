@@ -19,6 +19,7 @@
         "
       >
         <Search v-model="search" :locale="locale" />
+        <slot name="datatable-actions" />
         <Export :locale="locale" @exportTo="exportTo" />
       </div>
       <div style="overflow-x: auto; width: 100%">
@@ -29,7 +30,7 @@
               :key="column.name"
               style="padding: 10px; font-weight: bold"
             >
-              {{ column.label }}
+              {{ __(column.label) }}
             </th>
           </thead>
           <tbody>
@@ -48,7 +49,7 @@
                 </slot>
               </td>
             </tr>
-            <tr v-if="tableRows.length == 0">
+            <tr v-if="!tableRows.length">
               <td :colspan="columns.length" style="padding: 10px">
                 <span>{{ trans("No records added yet", locale) }}</span>
               </td>
@@ -79,7 +80,6 @@ import _ from "lodash";
 import qs from "qs";
 import Export from "./Export.vue";
 import Search from "./Search.vue";
-import $ from "jquery";
 import Spinner from "./Spinner.vue";
 
 export default {
@@ -160,6 +160,10 @@ export default {
     },
   },
   watch: {
+    params: function (newVal) {
+      // console.log(newVal);
+      // this.reloadData();
+    },
     page: function (newVal) {
       this.reloadData();
     },
@@ -179,18 +183,25 @@ export default {
     },
     addActionsListener() {
       let vm = this;
-      $("#" + this.id + " tbody").on("click", "a", function (e) {
-        let action = $(this).data("action");
-        let route = $(this).data("route");
-        let index = $(this).parents("tr").data("index");
-        // let rowData = $(this).parents("tr").data("data");
-        let rowData = vm.tableRows?.[index];
-        let clicked = {
-          action: action,
-          route: route,
-          data: rowData,
-        };
-        vm.$emit("setAction", clicked);
+      document.querySelectorAll("#" + this.id + " tbody tr").forEach((row) => {
+        row.querySelectorAll("a").forEach((action) => {
+          action.addEventListener("click", function (actionEvent) {
+            actionEvent.preventDefault();
+            /**
+             * Extracting data
+             */
+            let index = row.getAttribute("data-index");
+            let action = this.getAttribute("data-action");
+            let route = this.getAttribute("data-route");
+            let rowData = vm.tableRows?.[index];
+            let clicked = {
+              action: action,
+              route: route,
+              data: rowData,
+            };
+            vm.$emit("setAction", clicked);
+          });
+        });
       });
     },
     reloadData() {

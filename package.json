@@ -1,14 +1,14 @@
 {
-  "name": "asay-datatable",
+  "name": "asay-vue-datatable",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Will include all datatable functionlaty",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/asayhome/asay-datatable.git"
+    "url": "git+https://github.com/asayhome/asay-vue-datatable.git"
   },
   "keywords": [
     "datatable"
@@ -16,9 +16,9 @@
   "author": "Abdelrahman Saeed Elhassan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/asayhome/asay-datatable/issues"
+    "url": "https://github.com/asayhome/asay-vue-datatable/issues"
   },
-  "homepage": "https://github.com/asayhome/asay-datatable#readme",
+  "homepage": "https://github.com/asayhome/asay-vue-datatable#readme",
   "dependencies": {
     "qs": "^6.11.0"
   }

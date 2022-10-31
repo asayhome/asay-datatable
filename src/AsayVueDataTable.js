@@ -5,7 +5,8 @@ export default {
 
         app
             .mixin(mixins)
-            .component("DataTable", DataTable);
+            .component("DataTable", DataTable)
+            .component("asay-vue-datatable", DataTable);
         /*  our code for the plugin goes here
                 app is the result of createApp()
                 options is user options passed in
