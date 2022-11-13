@@ -76,12 +76,17 @@ export default {
     },
     pages: function () {
       let array = [];
-      let ctr = parseInt(this.startWith);
+      let pageNo = parseInt(this.startWith);
       let totalPages = parseInt(this.passedTotal);
+      let ctr = 1;
       while (totalPages > 0) {
-        array.push(ctr);
-        ctr++;
+        array.push(pageNo);
+        pageNo++;
         totalPages -= this.paginate;
+        ctr++;
+        if (ctr > 10) {
+          break;
+        }
       }
       return array;
     },
