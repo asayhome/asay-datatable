@@ -111,11 +111,9 @@ export default {
   setup(props) {
     let dataTable = ref(null);
     let exportButtons = ref([]);
-    let passedParams = ref(props.params);
     return {
       dataTable,
       exportButtons,
-      passedParams,
     };
   },
   methods: {
@@ -237,11 +235,10 @@ export default {
     reloadData() {
       this.dataTable?.ajax.reload();
     },
-    reRenderTable() {
-      $("#" + this.id)
-        .DataTable()
-        .destroy();
-      this.initDataTable();
+  },
+  computed: {
+    passedParams: function () {
+      return this.params;
     },
   },
   created() {
@@ -271,7 +268,7 @@ export default {
   },
   watch: {
     params: function (newVal, oldVal) {
-      this.passedParams = newVal;
+      // this.passedParams = newVal;
       this.reloadData();
     },
   },
