@@ -235,6 +235,12 @@ export default {
     reloadData() {
       this.dataTable?.ajax.reload();
     },
+    reRenderTable() {
+      $("#" + this.id)
+        .DataTable()
+        .destroy();
+      this.initDataTable();
+    },
   },
   computed: {
     passedParams: function () {
