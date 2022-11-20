@@ -149,6 +149,7 @@ export default {
         searchDelay: 500,
         processing: true,
         serverSide: true,
+        deferRender: true,
         //order: [[0, "asc"]],
         stateSave: true,
         // select: {
