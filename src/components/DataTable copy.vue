@@ -74,7 +74,7 @@
 
 <script>
 import axios from "axios";
-import { ref } from "vue";
+import {ref} from "vue";
 import Paginate from "./Paginate.vue";
 import _ from "lodash";
 import qs from "qs";

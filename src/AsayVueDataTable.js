@@ -1,5 +1,6 @@
 import DataTable from "./components/DataTable.vue";
-import { mixins } from "./Mixin";
+import {mixins} from "./Mixin";
+
 export default {
     install: (app, options) => {
 

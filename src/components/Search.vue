@@ -15,8 +15,9 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import {ref} from "vue";
 import SearchIcon from "../Icons/SearchIcon.vue";
+
 export default {
   components: {
     SearchIcon,

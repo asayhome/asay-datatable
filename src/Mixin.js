@@ -1,4 +1,5 @@
 import Ar from './Translations/Ar.json'
+
 export const mixins = {
     methods: {
         trans(key, locale = 'en') {

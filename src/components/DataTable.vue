@@ -90,9 +90,10 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import {ref} from "vue";
 import arLocale from "../Translations/Ar.json";
 import enLocale from "../Translations/En.json";
+
 export default {
   props: {
     columns: Array,

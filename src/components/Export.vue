@@ -13,6 +13,7 @@
 <script>
 import ExcelIcon from "../Icons/ExcelIcon.vue";
 import PdfIcon from "../Icons/PdfIcon.vue";
+
 export default {
   props: {
     locale: String,
